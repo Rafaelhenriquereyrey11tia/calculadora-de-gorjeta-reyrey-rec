@@ -30,9 +30,16 @@ header{
 main{
     background-color: var(--white);
     padding: 2rem;
+    border-radius: 1.5625rem 1.5625rem 0 0;
+}
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 .conta,
-.gorjeta{
+.gorjeta,
+.pessoas{
     margin-bottom: 2rem;
 }
 .conta label,
@@ -102,4 +109,30 @@ color: var(--white);
 }
 .pessoas #erro{
     display: none;
+}
+
+.resultados{
+    background-color: var(--greem-800);
+    border-radius: 0.9375rem;
+    padding: 1.5rem;
+}
+.resultados div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.resultados p{
+    color: var(--greem-400);
+    font-size: 0.8125rem;   
+}
+.resultados p strong{
+    color:var(--white);
+    font-size: 1rem;
+}
+.resultados div > strong{
+    color:var(--ligth-green);
+    font-size: 2rem;
+}
+.resultados .gorjeta-total{
+    margin-bottom: 1.25rem;
 }
