@@ -16,8 +16,14 @@
     --greem-800: #00474b;
     --ligth-green:#26c2ae;
     --white: #fff;
+    --green-hover: #9fe8df;
+    --danger: #e17457;
 }
-
+    .conta input::-webkit-inner-spin-button,
+    .pessoas input::-webkit-inner-spin-button,
+    .gorjeta #outra::-webkit-inner-spin-button{
+        display: none;
+}
 body{
   background-color: var(--green-200);
 }
@@ -50,7 +56,7 @@ main{
 }
 
 .conta div,
-.pessoas div{
+.pessoas .input-box{
     margin-top: 0.4rem;
     background-color: var(--greem-100);
     padding: 0.4rem 1.2rem;
@@ -76,8 +82,13 @@ main{
 }
 
 .conta:has(input:focus) div,
-.pessoas:has(input:focus) div{
+.conta:has(input:hover) div,
+.pessoas:has(input:focus) .input-box ,
+.pessoas:has(input:hover) .input-box ,
+.gorjeta #outra:focus,
+.gorjeta #outra:hover{
     outline: 2px solid var(--ligth-green);
+    cursor: pointer;
 }
 
 .gorjeta div {
@@ -98,19 +109,40 @@ background-color: var(--greem-800);
 color: var(--white);
 
 }
+.gorjeta input[type="button"]:hover,
+.resultados button:hover {
+    background-color: var(--green-hover);
+    cursor: pointer;
+
+}
+  
 
 .gorjeta #outra{
     width: 100%;
     background-color: var(--greem-100);
     color: var(--greem-800);
 }
-.gorjeta #outras::placeholder{
-    color: var(--greem-300);
+.gorjeta #outra::placeholder{
+    color: var(--greem-300);    
+}
+.pessoas .textos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+   
+}
+.pessoas #erro-div{
+    outline: 2px solid var(--danger);
+
+
 }
 .pessoas #erro{
+    font-size: 0.75rem;
+    color: var(--danger);
+    font-weight: 700;
     display: none;
 }
-
 .resultados{
     background-color: var(--greem-800);
     border-radius: 0.9375rem;
@@ -177,10 +209,7 @@ color: var(--white);
         width:100%;
         
     }
-    .conta input::-webkit-inner-spin-button,
-    .pessoas input::-webkit-inner-spin-button{
-    display: none;
-
+        
     }
     .gorjeta div{
         grid-template-columns: 1f 1f 1f;
@@ -194,5 +223,5 @@ color: var(--white);
     }
     .resultados div > strong{
         font-size: 3rem;
+    
     }
-}
